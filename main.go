@@ -1,7 +1,10 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"llmgo-/constans"
+)
 
 func main() {
-	fmt.Println("hello")
+	fmt.Println(constans.API_KAY)
 }
