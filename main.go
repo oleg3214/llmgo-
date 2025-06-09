@@ -37,6 +37,30 @@ func (t LLMSearchTool) Call(ctx context.Context, input string) (string, error) {
 	return resp, nil
 }
 
+type UpLoadBD struct {
+	llm llms.Model
+}
+
+func (t UpLoadBD) Name() string {
+	return "LLMSearch"
+}
+
+func (t UpLoadBD) Description() string {
+	return "Поиск информации "
+}
+
+func (t UpLoadBD) Call(ctx context.Context, input string) (string, error) {
+
+	prompt := fmt.Sprintf("Ты интеллектуальный поисковик.Дай краткий ответ без лишний воды: %s", input)
+
+	resp, err := llms.GenerateFromSinglePrompt(ctx, t.llm, prompt)
+	if err != nil {
+		return "", err
+	}
+
+	return resp, nil
+}
+
 type VerboseTool struct {
 	Tool tools.Tool
 }
