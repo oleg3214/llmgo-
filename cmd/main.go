@@ -7,16 +7,10 @@ import (
 	"os/signal"
 	"syscall"
 
-	"github.com/Ablyamitov/userbot-core/config"
 	"github.com/Ablyamitov/userbot-core/pkg/bootstrap"
 )
 
 func main() {
-
-	cfg, err := config.LoadConfig()
-	if err != nil {
-		log.Fatal(err)
-	}
 
 	ctx, cancel := context.WithCancel(context.Background())
 	defer cancel()
