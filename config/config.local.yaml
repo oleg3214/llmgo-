@@ -1,0 +1,8 @@
+grpc_server:
+  network: "tcp"
+  address: ":50051"
+
+http_server:
+  port: 8081
+  host: 0.0.0.0
+
