@@ -21,7 +21,6 @@ func main() {
 		<-c
 		cancel()
 	}()
-
 	if err := bootstrap.Run(ctx, cfg); err != nil {
 		log.Fatal(err)
 	}
