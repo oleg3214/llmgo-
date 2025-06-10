@@ -25,4 +25,5 @@ func main() {
 	if err := bootstrap.Run(ctx, cfg); err != nil {
 		log.Fatal(err)
 	}
+	println("dd")
 }
